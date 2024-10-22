@@ -7,7 +7,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Activity, Bookmark, ChevronLeft, Menu, Moon, Settings, Sun } from "lucide-react";
+import { Activity, Bookmark, ChevronLeft, LogOut, Menu, Moon, Settings, Sun } from "lucide-react";
+import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
@@ -70,10 +71,10 @@ const MoreDropdown = () => {
               <p>화면 설정</p>
             </DropdownMenuItem>
 
-            {/* <DropdownMenuItem className="menuItem" onClick={() => signOut()}>
+            <DropdownMenuItem className="menuItem" onClick={() => signOut()}>
               <LogOut size={20} />
-              <p>Log out</p>
-            </DropdownMenuItem> */}
+              <p>로그아웃</p>
+            </DropdownMenuItem>
           </>
         )}
 
