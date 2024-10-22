@@ -33,11 +33,11 @@ const RegisterForm = () => {
     try {
       await axios.post(`/api/signup`, {
         name: registerData.name,
-        username: registerData.name,
+        // username: registerData.name,
         email: registerData.email,
-        website: "https://github.com/kionys",
-        bio: "https://velog.io/@kionys/posts",
-        gender: "male",
+        // website: "https://github.com/kionys",
+        // bio: "https://velog.io/@kionys/posts",
+        // gender: "male",
         password: registerData.password,
       });
       router.replace(`/login`);
