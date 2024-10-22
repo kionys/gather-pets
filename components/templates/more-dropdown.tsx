@@ -22,13 +22,13 @@ const MoreDropdown = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
   useEffect(() => {
-    function handleOutsideClick(event: MouseEvent) {
+    const handleOutsideClick = (event: MouseEvent) => {
       if (!event.target) return;
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        // setShowModeToggle(false);
+        setShowModeToggle(false);
         setOpen(false);
       }
-    }
+    };
 
     document.addEventListener("mousedown", handleOutsideClick);
 

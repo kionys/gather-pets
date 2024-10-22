@@ -7,7 +7,7 @@ export default withAuth({
       const isOnDashboard = req.nextUrl.pathname.startsWith("/dashboard");
       if (isOnDashboard) {
         if (isLoggedIn) return true;
-        return false; // Redirect unauthenticated users to login page
+        return false; // 인증되지 않은 사용자를 로그인 페이지로 리디렉션
       }
       return true;
     },

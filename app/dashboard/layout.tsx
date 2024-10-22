@@ -1,10 +1,10 @@
 import SideNav from "@/components/templates/side-nav";
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <>
       <div className="flex h-screen relative flex-col md:flex-row md:overflow-hidden">
@@ -17,4 +17,5 @@ export default function RootLayout({
       </div>
     </>
   );
-}
+};
+export default RootLayout;

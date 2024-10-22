@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "../ui/button";
 
-function NavLinks() {
+const NavLinks = () => {
   const pathname = usePathname();
 
   return (
@@ -38,7 +38,7 @@ function NavLinks() {
       })}
     </>
   );
-}
+};
 
 export default NavLinks;
 
