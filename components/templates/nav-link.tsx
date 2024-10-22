@@ -27,7 +27,7 @@ function NavLinks() {
           >
             <LinkIcon className="w-6" />
             <p
-              className={`${cn("hidden lg:block justify-start w-full", {
+              className={`${cn("hidden lg:block", {
                 "font-extrabold": isActive,
               })}`}
             >
@@ -43,7 +43,7 @@ function NavLinks() {
 export default NavLinks;
 
 const links = [
-  { name: "홈", href: "/dashboard", icon: Home },
+  { name: "대시보드", href: "/dashboard", icon: Home },
   {
     name: "검색",
     href: "/dashboard/search",
