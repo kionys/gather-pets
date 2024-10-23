@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Clapperboard, Heart, Home, MessageCircle, PlusSquare, Search } from "lucide-react";
+import { Heart, Home, MessageCircle, PlusSquare, Search } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { buttonVariants } from "../ui/button";
@@ -19,6 +19,7 @@ const NavLinks = () => {
           <Link
             key={link.name}
             href={link.href}
+            scroll={false}
             className={buttonVariants({
               variant: isActive ? "secondary" : "ghost",
               className: cn("navLink", { "hidden md:flex": link.hideOnMobile }),
@@ -50,11 +51,11 @@ const links = [
     icon: Search,
     hideOnMobile: true,
   },
-  {
-    name: "릴스",
-    href: "/dashboard/reels",
-    icon: Clapperboard,
-  },
+  // {
+  //   name: "릴스",
+  //   href: "/dashboard/reels",
+  //   icon: Clapperboard,
+  // },
   {
     name: "메세지",
     href: "/dashboard/messages",
