@@ -28,7 +28,7 @@ export const usePostsInfinite = () => {
     queryFn: fetchPosts,
     initialPageParam: 1,
     refetchOnWindowFocus: false,
-    staleTime: 1000 * 60 * 5,
+    // staleTime: 1000 * 60 * 5,
     getNextPageParam: lastPage => {
       return lastPage.data?.length > 0 ? lastPage.page + 1 : undefined;
     },
