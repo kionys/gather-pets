@@ -1,5 +1,6 @@
 "use client";
 
+import { IPost } from "@/lib/types";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
@@ -7,7 +8,7 @@ import UserAvatar from "./user-avatar";
 
 interface IPropsPostView {
   id: string;
-  post: any;
+  post: IPost;
 }
 
 const PostView = ({ id, post }: IPropsPostView) => {

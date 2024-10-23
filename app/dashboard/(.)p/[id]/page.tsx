@@ -1,5 +1,6 @@
 import PostView from "@/components/templates/post-view";
 import { fetchPostById } from "@/lib/data";
+import { IPost } from "@/lib/types";
 import { notFound } from "next/navigation";
 
 const PostModal = async ({ params: { id } }: { params: { id: string } }) => {
@@ -10,7 +11,7 @@ const PostModal = async ({ params: { id } }: { params: { id: string } }) => {
   if (!post) {
     return notFound();
   }
-  return <PostView id={id} post={post} />;
+  return <PostView id={id} post={post as unknown as IPost} />;
 };
 
 export default PostModal;
