@@ -11,7 +11,7 @@ export const TanStackProvider = ({ children }: IPropsTanStackProvider) => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 1000 * 60 * 5, // 5분 동안 데이터 신선 유지
+        // staleTime: 1000 * 60 * 5, // 5분 동안 데이터 신선 유지
       },
     },
   });
