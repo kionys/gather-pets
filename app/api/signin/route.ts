@@ -1,5 +1,6 @@
 import prisma from "@/db";
 import bcrypt from "bcryptjs";
+import { NextResponse } from "next/server";
 
 interface RequestBody {
   email: string;
@@ -18,11 +19,10 @@ export async function POST(request: Request) {
   });
 
   // username과 password부분을 불러와 DB에 있는 username과 password와 비교
-  // 맞으면 user 정보 리턴
-  // 틀리면 null 리턴
+  // 맞으면 user 정보 리턴, 틀리면 null 리턴
   if (user && (await bcrypt.compare(body.password, user.password!))) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...userWithoutPass } = user;
-    return new Response(JSON.stringify(userWithoutPass));
-  } else return new Response(JSON.stringify(null));
+    return NextResponse.json(userWithoutPass);
+  } else return NextResponse.json(null);
 }

@@ -1,5 +1,6 @@
 import prisma from "@/db";
 import bcrypt from "bcryptjs";
+import { NextResponse } from "next/server";
 
 interface RequestBody {
   name: string;
@@ -33,5 +34,5 @@ export async function POST(request: Request) {
   // user 객체에서 password 부분을 제외하고 나머지 부분만 최종적으로 response 해주기
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { password, ...result } = user; // password를 제외하고 나머지를 result에 담기
-  return new Response(JSON.stringify(result)); // result를 응답으로 반환
+  return NextResponse.json(result); // result를 응답으로 반환
 }
