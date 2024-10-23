@@ -14,7 +14,7 @@ interface IPropsPostOptions {
 }
 
 const PostOptions = ({ post, userId, className }: IPropsPostOptions) => {
-  const isPostMine = post.userId !== userId;
+  const isPostMine = post.userId === userId;
   return (
     <Dialog>
       <DialogTitle>
@@ -38,7 +38,8 @@ const PostOptions = ({ post, userId, className }: IPropsPostOptions) => {
             게시글 수정
           </Link>
         )}
-        <Button>신고하기</Button>
+
+        {!isPostMine && <Button>신고하기</Button>}
       </DialogContent>
     </Dialog>
   );
