@@ -71,7 +71,7 @@ const RegisterForm = () => {
               name="name"
               value={registerData.name}
               onChange={onChangeInput}
-              placeholder="이름"
+              placeholder="Name"
               className="h-14 rounded-md px-4 py-2"
             />
             <Input
@@ -79,7 +79,7 @@ const RegisterForm = () => {
               name="email"
               value={registerData.email}
               onChange={onChangeInput}
-              placeholder="이메일"
+              placeholder="Email"
               className="h-14 rounded-md px-4 py-2"
             />
             <Input
@@ -87,7 +87,7 @@ const RegisterForm = () => {
               name="password"
               value={registerData.password}
               onChange={onChangeInput}
-              placeholder="비밀번호"
+              placeholder="Password"
               className="h-14 rounded-md px-4 py-2"
             />
             <Button
