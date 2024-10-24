@@ -14,7 +14,7 @@ const PostModal = async ({ params: { id } }: { params: { id: string } }) => {
       });
       return res.data;
     } catch (e) {
-      console.error("Failed to fetch post:", e);
+      console.error(e);
       return null;
     }
   };
