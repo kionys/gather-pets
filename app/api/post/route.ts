@@ -37,7 +37,7 @@ export async function GET(request: Request) {
   const page = searchParams.get("page") as string;
   const limit = searchParams.get("limit") as string;
   // const id = searchParams.get("id") as string;
-  const userId = await getUserId();
+  // const userId = await getUserId();
 
   if (page) {
     const count = await prisma.post.count();
@@ -47,7 +47,7 @@ export async function GET(request: Request) {
         orderBy: { id: "desc" },
         take: parseInt(limit),
         skip: skipPage * parseInt(limit),
-        where: userId ? { user: { id: userId } } : {},
+        // where: userId ? { user: { id: userId } } : {},
         select: {
           id: true,
           userId: true,
